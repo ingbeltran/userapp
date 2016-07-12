@@ -23,8 +23,10 @@ $config = [
             'enableAutoLogin' => true,
         ],*/
         'user' => [
-            'identityClass' => 'mdm\admin\models\User',
-            'loginUrl' => ['rbac/user/login'],
+            //'identityClass' => 'mdm\admin\models\User',
+            'identityClass' => 'app\models\User',
+            //'loginUrl' => ['rbac/user/login'],
+            'loginUrl' => ['site/login'],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -68,16 +70,16 @@ $config = [
                 ],
             ],
             'layout' => 'left-menu',
-            'mainLayout' => '@app/views/layouts/main.php',
+            'mainLayout' => '@app/views/layouts/admin.php',
         ],
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
             'site/*',
-            'admin/*',
-            'rbac/*',
-            'libro/index',
+            //'admin/*',
+            //'rbac/*',
+            //'libro/index',
         ]
     ],
     'params' => $params,
